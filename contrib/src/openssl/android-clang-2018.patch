@@ -1,0 +1,23 @@
+---
+ Configurations/10-main.conf | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+--- a/Configurations/10-main.conf
++++ b/Configurations/10-main.conf
+@@ -910,7 +910,7 @@
+         # systems are perfectly capable of executing binaries targeting
+         # Froyo. Keep in mind that in the nutshell Android builds are
+         # about JNI, i.e. shared libraries, not applications.
+-        cflags           => add(picker(default => "-mandroid -fPIC --sysroot=\$(CROSS_SYSROOT) -Wa,--noexecstack")),
++        cflags           => add(picker(default => " -fPIC --sysroot=\$(CROSS_SYSROOT) -Wa,--noexecstack")),
+         bin_cflags       => "-pie",
+     },
+     "android-x86" => {
+@@ -950,7 +950,7 @@
+ 
+     "android64" => {
+         inherit_from     => [ "linux-generic64" ],
+-        cflags           => add(picker(default => "-mandroid -fPIC --sysroot=\$(CROSS_SYSROOT) -Wa,--noexecstack")),
++        cflags           => add(picker(default => " -fPIC --sysroot=\$(CROSS_SYSROOT) -Wa,--noexecstack")),
+         bin_cflags       => "-pie",
+     },
+     "android64-aarch64" => {
